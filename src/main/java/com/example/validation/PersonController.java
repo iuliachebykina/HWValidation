@@ -16,11 +16,12 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @GetMapping("/person/{birthday}/{name}/{lastName}/{sex}")
-    public String getPerson(@PathVariable String birthday, @PathVariable String name, @PathVariable String lastName, @PathVariable String sex){
-        String[] date = birthday.split("\\.");
-        LocalDate b = LocalDate.of(Integer.parseInt(date[2]), Integer.parseInt(date[1]), Integer.parseInt(date[0]));
-        var person = new Person(b, name, lastName, Sex.valueOf(sex));
+
+    @PostMapping("/person")
+    public String getPerson(@RequestBody PersonJson json){
+        String[] date = json.getBirthday().split("\\.");
+        LocalDate birthday = LocalDate.of(Integer.parseInt(date[2]), Integer.parseInt(date[1]), Integer.parseInt(date[0]));
+        var person=  new Person(birthday, json.getName(), json.getLastName(), Sex.valueOf(json.getSex()));
         personService.register(person);
         return "success";
     }
