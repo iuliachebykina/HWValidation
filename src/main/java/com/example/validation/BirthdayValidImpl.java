@@ -14,9 +14,6 @@ public class BirthdayValidImpl implements ConstraintValidator<BirthdayValid, Loc
         int nowMonth = localDate.getMonth().getValue();
         int valueDay = value.getDayOfMonth();
         int nowDay = localDate.getDayOfMonth();
-        if (value == null) {
-            return false;
-        }
         if (valueYear > nowYear) {
             return false;
         }
