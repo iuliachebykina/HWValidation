@@ -12,7 +12,7 @@ public class PersonJson {
     String lastName;
     String sex;
 
-    public PersonJson(String birthday, String name, String lastName,String sex ) {
+    public PersonJson(String birthday, String name, String lastName, String sex) {
         this.birthday = birthday;
         this.name = name;
         this.lastName = lastName;

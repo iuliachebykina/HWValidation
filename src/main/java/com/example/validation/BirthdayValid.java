@@ -1,6 +1,5 @@
 package com.example.validation;
 
-import com.example.validation.BirthdayValidImpl;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
@@ -15,6 +14,8 @@ import static java.lang.annotation.RetentionPolicy.*;
 @Constraint(validatedBy = BirthdayValidImpl.class)
 public @interface BirthdayValid {
     String message() default "{birthday-valid}";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

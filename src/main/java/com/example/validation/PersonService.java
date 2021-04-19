@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 @Validated
 public class PersonService {
-    public List<String> register(@Valid Person person){
+    public List<String> register(@Valid Person person) {
         return null;
     }
 }

@@ -8,12 +8,12 @@ public class BirthdayValidImpl implements ConstraintValidator<BirthdayValid, Loc
     @Override
     public boolean isValid(LocalDate value, ConstraintValidatorContext context) {
         LocalDate localDate = LocalDate.now();
-        int valueYear =value.getYear();
+        int valueYear = value.getYear();
         int nowYear = localDate.getYear();
         int valueMonth = value.getMonth().getValue();
-        int nowMonth =  localDate.getMonth().getValue();
+        int nowMonth = localDate.getMonth().getValue();
         int valueDay = value.getDayOfMonth();
-        int nowDay =localDate.getDayOfMonth();
+        int nowDay = localDate.getDayOfMonth();
         if (value == null) {
             return false;
         }
